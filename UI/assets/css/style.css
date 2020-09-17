@@ -1641,6 +1641,10 @@ section {
   background: #1ed33c;
 }
 
+.course-read-more:hover {
+  color: #1ed33c;
+  text-decoration: underline;
+}
 .blog .entry .entry-content h3 {
   font-size: 22px;
   margin-top: 30px;
