@@ -168,3 +168,97 @@
   });
 
 })(jQuery);
+
+document.body.insertAdjacentHTML('beforeend', `
+  <div id="myModal" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-container" id="modal-container">
+        <div class="form-container sign-up-container">
+          <!-- Sign Up form code goes here -->
+          <form action="#" class="getstarted-form">
+            <h1>Create Account</h1>
+            <span>or use your email for registration</span>
+            <!-- <input type="text" placeholder="Name" /> -->
+            <input class="getstarted-input" type="email" placeholder="Email" />
+            <input class="getstarted-input" type="password" placeholder="Password" />
+            <button class="my-button">Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <!-- Sign In form code goes here -->
+          <form action="#" class="getstarted-form">
+            <h1>Sign in</h1>
+            <span>or use your account</span>
+            <input class="getstarted-input" type="email" placeholder="Email" />
+            <input class="getstarted-input" type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button class="my-button">Sign In</button>
+          </form>
+        </div>
+        <div class="fm-overlay-container">
+          <!-- The overlay code goes here -->
+          <div class="fm-overlay">
+            <div class="fm-overlay-panel fm-overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>
+                To keep connected with us please login with your personal info
+              </p>
+              <button class="ghost my-button" id="signIn">Sign In</button>
+            </div>
+            <div class="fm-overlay-panel fm-overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start journey with us</p>
+              <button class="ghost my-button" id="signUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+`);
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('modal-container');
+
+signUpButton.addEventListener('click', () => {
+    container.classList.add('right-panel-active');
+});
+
+signInButton.addEventListener('click', () => {
+    container.classList.remove('right-panel-active');
+});
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function(e) {
+  e.preventDefault();
+  //alert('This shit works');
+  modal.style.display = "block";
+  //alert(modal);
+  //alert(JSON.stringify(modal));
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of
+ // the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+
