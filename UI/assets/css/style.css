@@ -2246,3 +2246,247 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+/* begining of Sign up and sign in form */
+
+.modal-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  margin: auto;
+  max-width: 100%;
+  min-height: 480px;
+}
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.modal-container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.modal-container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+      opacity: 0;
+      z-index: 1;
+  }
+
+  50%,
+  100% {
+      opacity: 1;
+      z-index: 5;
+  }
+}
+.fm-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.modal-container.right-panel-active .fm-overlay-container {
+  transform: translateX(-100%);
+}
+
+.fm-overlay {
+  background:  #1bbd36;
+  background: -webkit-linear-gradient(to right, #2bb1ff, #1bbd36);
+  background: linear-gradient(to right, #2bb1ff, #1bbd36);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.modal-container.right-panel-active .fm-overlay {
+  transform: translateX(50%);
+}
+
+.fm-overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.fm-overlay-left {
+  transform: translateX(-20%);
+}
+
+.modal-container.right-panel-active .fm-overlay-left {
+  transform: translateX(0);
+}
+
+.fm-overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.modal-container.right-panel-active .fm-overlay-right {
+  transform: translateX(20%);
+}
+.getstarted-form h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.getstarted-form p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+.getstarted-form span {
+  font-size: 12px;
+}
+
+.getstarted-form a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.my-button {
+  border-radius: 20px;
+  border: 1px solid #2bb1ff;
+  background-color: #2bb1ff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.getstarted-form {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.getstarted-input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+/* .social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+} */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.8); /* Fallback color */
+  background-color: rgba(58, 56, 56, 0.9); /* Black w/ opacity */
+}
+.modal-content {
+  margin: auto;
+  background: transparent;
+  border: none;
+  width: 60%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  padding: 0 0 0 105%;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #2bb1ff;
+  text-decoration: none;
+  cursor: pointer;
+}
